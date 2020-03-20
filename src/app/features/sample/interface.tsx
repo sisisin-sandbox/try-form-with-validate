@@ -7,7 +7,7 @@ export const [handle, SampleActions, getSampleState] = createModule(SampleSymbol
   .withState<SampleState>();
 
 // --- Types ---
-export type SampleForm = { ex: string; exr: string }; // Record<string, any>;
+export type SampleForm = Record<string, any>;
 export interface SampleState {
   form: SampleForm | {};
 }

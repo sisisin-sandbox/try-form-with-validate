@@ -20,9 +20,22 @@ export const SampleView = () => {
           ),
         )}
       >
-        <input name="ex" defaultValue="test" ref={register}></input>
-        <input name="exr" ref={register({ required: true })}></input>
-        {errors.exr && <span>This field is required</span>}
+        <div>
+          <input name="ex" defaultValue="test" ref={register}></input>
+        </div>
+        <div>
+          <input name="exr" ref={register({ required: true })}></input>
+          {errors.exr && <span>This field is required</span>}
+        </div>
+        <div>
+          <input
+            name="v"
+            ref={register({
+              validate: async (data) => data === 'hoge' || 'this field must be `hoge`',
+            })}
+          ></input>
+          {errors.v && <span>{errors.v.message}</span>}
+        </div>
         <input type="submit"></input>
       </form>
     </div>

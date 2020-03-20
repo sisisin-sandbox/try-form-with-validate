@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useActions } from 'typeless';
 import { getSampleState, SampleActions, SampleForm } from '../interface';
 import { ValidationWithMultiValue } from './ValidationWithMultiValue';
+import { Mat } from './Mat';
 
 export const SampleView = () => {
   const { register, handleSubmit, errors } = useForm<SampleForm>();
@@ -10,6 +11,9 @@ export const SampleView = () => {
 
   return (
     <div>
+      <Mat></Mat>
+      <hr></hr>
+
       <pre>{JSON.stringify(getSampleState.useState().form, null, '  ')}</pre>
       <form
         onSubmit={handleSubmit(

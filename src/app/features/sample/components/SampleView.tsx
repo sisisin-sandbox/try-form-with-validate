@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useActions } from 'typeless';
 import { getSampleState, SampleActions, SampleForm } from '../interface';
+import { ValidationWithMultiValue } from './ValidationWithMultiValue';
 
 export const SampleView = () => {
   const { register, handleSubmit, errors } = useForm<SampleForm>();
@@ -38,6 +39,8 @@ export const SampleView = () => {
         </div>
         <input type="submit"></input>
       </form>
+      <hr></hr>
+      <ValidationWithMultiValue></ValidationWithMultiValue>
     </div>
   );
 };

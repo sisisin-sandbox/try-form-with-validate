@@ -11,9 +11,6 @@ export const HeaderMenu = () => {
         <TypedLink path="/login">login page</TypedLink>
       </div>
       <div>
-        <AnyLink path="/authed">authed</AnyLink>
-      </div>
-      <div>
         <AnyLink path="/no_matched">no_matched</AnyLink>
       </div>
       <hr></hr>

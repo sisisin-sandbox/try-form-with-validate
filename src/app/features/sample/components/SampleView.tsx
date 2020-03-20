@@ -1,23 +1,30 @@
 import React from 'react';
-import { getSampleState } from '../interface';
-import { TypedLink } from 'app/components/Link';
-import { useRouter } from 'app/hooks/useRouter';
+import { useForm } from 'react-hook-form';
+import { useActions } from 'typeless';
+import { getSampleState, SampleActions, SampleForm } from '../interface';
 
 export const SampleView = () => {
-  const { foo } = getSampleState.useState();
-  const { params } = useRouter();
+  const { register, handleSubmit, errors } = useForm<SampleForm>();
+  const { formSubmitted } = useActions(SampleActions);
+
   return (
-    <>
-      <div>Feature sample {foo}</div>
-      <div>params: {JSON.stringify(params, null, '  ')}</div>
-      <div>
-        <TypedLink path="/sample">sample</TypedLink>
-      </div>
-      <div>
-        <TypedLink path="/sample/:id" params={{ id: '15' }}>
-          with path route
-        </TypedLink>
-      </div>
-    </>
+    <div>
+      <pre>{JSON.stringify(getSampleState.useState().form, null, '  ')}</pre>
+      <form
+        onSubmit={handleSubmit(
+          React.useCallback(
+            (data) => {
+              formSubmitted(data);
+            },
+            [formSubmitted],
+          ),
+        )}
+      >
+        <input name="ex" defaultValue="test" ref={register}></input>
+        <input name="exr" ref={register({ required: true })}></input>
+        {errors.exr && <span>This field is required</span>}
+        <input type="submit"></input>
+      </form>
+    </div>
   );
 };

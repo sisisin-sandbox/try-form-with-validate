@@ -1,0 +1,75 @@
+{
+  "name": "typeless-starter",
+  "version": "0.1.0",
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "verify": "run-p verify-*",
+    "verify-lint": "yarn _lint",
+    "verify-type": "tsc",
+    "verify-format": "yarn _prettier --list-different",
+    "_lint": "eslint --ext js,jsx,ts,tsx .",
+    "_prettier": "prettier \"**/*.{json,css,scss}\"",
+    "fix": "run-p fix-*",
+    "fix-lint": "yarn _lint --fix",
+    "fix-format": "yarn _prettier --write",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "gf": "plop feature",
+    "gm": "plop module"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@loadable/component": "^5.12.0",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/preset-create-react-app": "^2.0.0",
+    "@storybook/react": "^5.3.14",
+    "@types/jest": "^25.1.4",
+    "@types/loadable__component": "^5.10.0",
+    "@types/node": "^13.9.0",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/storybook__addon-links": "^5.2.1",
+    "@types/storybook__react": "^5.2.1",
+    "@types/webpack-env": "^1.15.1",
+    "babel-loader": "^8.0.6",
+    "commandpost": "^1.4.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "npm-run-all": "^4.1.5",
+    "plop": "^2.6.0",
+    "prettier": "^1.19.1",
+    "react-router-dom": "^5.1.2",
+    "react-test-renderer": "^16.13.0",
+    "rxjs": "^6.5.4",
+    "ts-morph": "^7.0.0",
+    "ts-node": "^8.6.2",
+    "typeless": "^1.3.0",
+    "typescript": "^3.8.3"
+  },
+  "license": "MIT"
+}

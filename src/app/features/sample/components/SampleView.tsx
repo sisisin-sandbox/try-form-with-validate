@@ -4,6 +4,7 @@ import { useActions } from 'typeless';
 import { getSampleState, SampleActions, SampleForm } from '../interface';
 import { ValidationWithMultiValue } from './ValidationWithMultiValue';
 import { Mat } from './Mat';
+import { ValidationWithLib } from './ValidationWithLib';
 
 export const SampleView = () => {
   const { register, handleSubmit, errors } = useForm<SampleForm>();
@@ -11,6 +12,8 @@ export const SampleView = () => {
 
   return (
     <div>
+      <ValidationWithLib></ValidationWithLib>
+      <hr></hr>
       <Mat></Mat>
       <hr></hr>
 
